@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {ref} from "vue";
-
 const isClicked1=ref(false)
 const isClicked2=ref(false)
 const isClicked3=ref(false)
@@ -22,28 +21,28 @@ const change4=()=>{
 <template>
 <div class="side">
    <div class="home" >
-     <div class="homeBack" >
-     <img v-if="isClicked1" src="../assets/首页%20(1).png" @click="change1" alt="首页">
-     <img v-if="!isClicked1" src="../assets/首页.png" @click="change1" alt="首页">
+     <div class="homeBack" :class="{'active':isClicked1}">
+     <img v-if="isClicked1" src="../assets/首页%20(1).png" @click="change1" alt="首页" >
+     <img v-if="!isClicked1" src="../assets/首页.png" @click="change1" alt="首页" >
      </div>
      <p>首页</p>
    </div>
-   <div class="onlineAsk">
-     <div class="onlineAskBack">
+   <div class="onlineAsk" >
+     <div class="onlineAskBack" :class="{'active':isClicked2}">
      <img v-if="isClicked2" src="../assets/问答%20(1).png" @click="change2" alt="网上问诊">
      <img v-if="!isClicked2" src="../assets/问答.png" @click="change2" alt="网上问诊">
      </div>
      <p>线上问答</p>
    </div>
   <div class="dateManage">
-    <div class="dateManageBack">
+    <div class="dateManageBack" :class="{'active':isClicked3}">
     <img v-if="isClicked3" src="../assets/今日日程.png" @click="change3" alt="今日日程">
     <img v-if="!isClicked3" src="../assets/今日日程%20(1).png" @click="change3" alt="今日日程">
     </div>
     <p>日程管理</p>
   </div>
   <div class="shop">
-    <div class="shopBack">
+    <div class="shopBack" :class="{'active':isClicked4}">
     <img v-if="isClicked4" src="../assets/商城.png" @click="change4" alt="商城">
     <img v-if="!isClicked4" src="../assets/商城%20(1).png" @click="change4" alt="商城">
     </div>
@@ -55,8 +54,8 @@ const change4=()=>{
 <style scoped>
 .side {
   height: 90vh;
-  width: 15vh;
-
+  width: 8vw;
+  border-top: 1px solid gray;
   margin-left: -1%;
 
 }
@@ -78,12 +77,18 @@ img{
   height: 6vh;
   width: 6vh;
   margin-left: 3vh;
-  background-color: red;
+  background-color: #eaf1ff;
   text-align: center;
   border-radius: 1vh;
 }
+.homeBack.active{
+  background-color: #367bf5;
+}
+.homeBack:hover{
+  background-color: #367bf5;
+}
 .home p{
-  margin-top: 0vh;
+  margin-top: 0;
   margin-left: 4.5vh;
   color: gray;
 }
@@ -97,11 +102,17 @@ img{
   width: 6vh;
   margin-left: 3vh;
   text-align: center;
-  background-color: red;
+  background-color: #eaf1ff;
   border-radius: 1vh;
 }
+.onlineAskBack.active{
+  background-color: #367bf5;
+}
+.onlineAskBack:hover{
+  background-color: #367bf5;
+}
 .onlineAsk p{
-  margin-top: 0vh;
+  margin-top: 0;
   margin-left: 3vh;
   color: gray;
 }
@@ -118,11 +129,17 @@ img{
   width: 6vh;
   margin-left: 3vh;
   text-align: center;
-  background-color: red;
+  background-color: #eaf1ff;
 
 }
+.dateManageBack.active{
+  background-color: #367bf5;
+}
+.dateManageBack:hover{
+  background-color: #367bf5;
+}
 .dateManage p{
-  margin-top: 0vh;
+  margin-top: 0;
   margin-left: 3vh;
   color: gray;
 }
@@ -139,11 +156,17 @@ img{
   width: 6vh;
   margin-left: 3vh;
   text-align: center;
-  background-color: red;
+  background-color: #eaf1ff;
   border-radius: 1vh;
 }
+.shopBack.active{
+  background-color: #367bf5;
+}
+.shopBack:hover{
+  background-color: #367bf5;
+}
 .shop p{
-  margin-top: 0vh;
+  margin-top: 0;
   margin-left: 4vh;
   color: gray;
 }

@@ -7,12 +7,18 @@ import SideBar from "../components/sideBar.vue";
 <template>
   <div class="no-scroll">
   <Header></Header>
+    <div class="content">
   <SideBar></SideBar>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <style scoped>
 body{
   overflow: hidden;
+}
+.content{
+  display: flex;
 }
 </style>

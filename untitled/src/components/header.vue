@@ -15,11 +15,11 @@
 
 <style scoped>
 .lab{
-  height: 10vh;
+  height: 9vh;
   display: flex;
 
   justify-content: space-between;
-  line-height: 10vh;
+  line-height: 9vh;
 }
 .logo{
   width: 10vh;
